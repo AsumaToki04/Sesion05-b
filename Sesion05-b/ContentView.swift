@@ -8,17 +8,41 @@
 import SwiftUI
 
 class ModeloProyecto: ObservableObject {
-    @Published var proyectos: [Proyecto] = [
-        Proyecto(titulo: "Proyecto 1", tareas: [
-            Tarea(titulo: "Tarea 1"),
-            Tarea(titulo: "Tarea 2")
-        ]),
-        Proyecto(titulo: "Proyecto 2", tareas: [
-            Tarea(titulo: "Tarea 1"),
-            Tarea(titulo: "Tarea 2"),
-            Tarea(titulo: "Tarea 3")
-        ])
-    ]
+    @Published var proyectos: [Proyecto] = [] {
+        didSet {
+            guardarDatos()
+        }
+    }
+    
+    init() {
+        cargarDatos()
+    }
+    
+    private func archivoURL() -> URL {
+        let documento = FileManager.default.urls(
+            for: .documentDirectory,
+            in: .userDomainMask
+        ).first!
+        return documento.appendingPathExtension("proyectos.json")
+    }
+    
+    private func guardarDatos() {
+        do {
+            let datos = try JSONEncoder().encode(proyectos)
+            try datos.write(to: archivoURL())
+        } catch {
+            print("Error al guardar datos \(error)")
+        }
+    }
+    
+    private func cargarDatos() {
+        do {
+            let datos = try Data(contentsOf: archivoURL())
+            proyectos = try JSONDecoder().decode([Proyecto].self, from: datos)
+        } catch {
+            print("Error al cargar datos \(error)")
+        }
+    }
 }
 
 struct ContentView: View {

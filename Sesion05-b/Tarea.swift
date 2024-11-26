@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Tarea: Identifiable {
+struct Tarea: Identifiable, Codable {
     let id: UUID
     let titulo: String
     
