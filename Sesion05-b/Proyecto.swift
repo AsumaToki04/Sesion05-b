@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Proyecto: Identifiable {
+struct Proyecto: Identifiable, Codable {
     let id: UUID
     let titulo: String
     var tareas: [Tarea]
