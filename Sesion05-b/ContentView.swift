@@ -7,20 +7,26 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
+class ModeloProyecto: ObservableObject {
+    @Published var proyectos: [Proyecto] = [
+        Proyecto(titulo: "Proyecto 1", tareas: [
+            Tarea(titulo: "Tarea 1"),
+            Tarea(titulo: "Tarea 2")
+        ]),
+        Proyecto(titulo: "Proyecto 2", tareas: [
+            Tarea(titulo: "Tarea 1"),
+            Tarea(titulo: "Tarea 2"),
+            Tarea(titulo: "Tarea 3")
+        ])
+    ]
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+struct ContentView: View {
+    @StateObject private var modeloGlobal = ModeloProyecto()
+    
+    var body: some View {
+        NavigationView {
+            ListaProyectosView(modelo: modeloGlobal)
+        }
     }
 }
