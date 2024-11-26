@@ -15,7 +15,11 @@ struct ListaProyectosView: View {
         VStack {
             List {
                 ForEach(modelo.proyectos) { item in
-                    Text(item.titulo)
+                    NavigationLink(
+                    destination: ListaTareasView(proyecto: item)
+                    ) {
+                        Text(item.titulo)
+                    }
                 }
             }
         }
