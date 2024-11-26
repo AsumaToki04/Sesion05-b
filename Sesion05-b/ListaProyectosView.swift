@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ListaProyectosView: View {
     @ObservedObject var modelo: ModeloProyecto
+    @State private var mostrarRegistro = false
     
     var body: some View {
         VStack {
@@ -19,5 +20,17 @@ struct ListaProyectosView: View {
             }
         }
         .navigationTitle("Proyectos")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
+                    mostrarRegistro = true
+                }) {
+                    Image(systemName: "plus")
+                }
+            }
+        }
+        .sheet(isPresented: $mostrarRegistro) {
+            RegistroProyectoView(modelo: modelo, mostrar: $mostrarRegistro)
+        }
     }
 }
