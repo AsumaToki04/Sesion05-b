@@ -16,7 +16,7 @@ struct ListaProyectosView: View {
             List {
                 ForEach(modelo.proyectos) { item in
                     NavigationLink(
-                    destination: ListaTareasView(proyecto: item)
+                        destination: ListaTareasView(proyecto: item, modelo: modelo)
                     ) {
                         Text(item.titulo)
                     }
