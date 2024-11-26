@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB4C166D2CF5ED7400DF4F7B /* Tarea.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C166C2CF5ED7400DF4F7B /* Tarea.swift */; };
+		EB4C166F2CF5EDD300DF4F7B /* Proyecto.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C166E2CF5EDD300DF4F7B /* Proyecto.swift */; };
 		EBC607802CF5EC96008675D0 /* Sesion05_bApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC6077F2CF5EC96008675D0 /* Sesion05_bApp.swift */; };
 		EBC607822CF5EC96008675D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC607812CF5EC96008675D0 /* ContentView.swift */; };
 		EBC607842CF5EC99008675D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBC607832CF5EC99008675D0 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB4C166C2CF5ED7400DF4F7B /* Tarea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tarea.swift; sourceTree = "<group>"; };
+		EB4C166E2CF5EDD300DF4F7B /* Proyecto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proyecto.swift; sourceTree = "<group>"; };
 		EBC6077C2CF5EC96008675D0 /* Sesion05-b.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sesion05-b.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC6077F2CF5EC96008675D0 /* Sesion05_bApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sesion05_bApp.swift; sourceTree = "<group>"; };
 		EBC607812CF5EC96008675D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +59,8 @@
 				EBC607812CF5EC96008675D0 /* ContentView.swift */,
 				EBC607832CF5EC99008675D0 /* Assets.xcassets */,
 				EBC607852CF5EC99008675D0 /* Preview Content */,
+				EB4C166C2CF5ED7400DF4F7B /* Tarea.swift */,
+				EB4C166E2CF5EDD300DF4F7B /* Proyecto.swift */,
 			);
 			path = "Sesion05-b";
 			sourceTree = "<group>";
@@ -139,6 +145,8 @@
 			files = (
 				EBC607822CF5EC96008675D0 /* ContentView.swift in Sources */,
 				EBC607802CF5EC96008675D0 /* Sesion05_bApp.swift in Sources */,
+				EB4C166F2CF5EDD300DF4F7B /* Proyecto.swift in Sources */,
+				EB4C166D2CF5ED7400DF4F7B /* Tarea.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
